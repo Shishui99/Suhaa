@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fiqah Sense</title>
+<link rel="stylesheet" href="Istinjak-style.css" />
+</head>
+<body>
+  <button id="openSidebarBtn" onclick="openSidebar()">☰ Menu</button>
+
+  <div id="sidebar">
+    <a href="#" onclick="showPage('home')">Pengenalan</a>
+    <a href="#" onclick="showPage('apa')">Apa itu Istinjak</a>
+    <a href="#" onclick="showPage('alat')">Alat dan Kaedah Istinjak</a>
+    <a href="#" onclick="showPage('cara')">Cara Cara Istinjak</a>
+    <a href="#" onclick="showPage('adab')">Adab dan Qada Hajat</a>
+    <a href="#" onclick="showPage('kepentingan')">Kepentingan Istinjak</a>
+    <a href="#" onclick="showPage('quizz')">Quizz</a>
+    <a href="#" onclick="showPage('feedback')">Feedback</a>
+    <a href="javascript:void(0)" onclick="closeSidebar()">Close ×</a>
+  </div>
+
+  <!-- Clickable background photo -->
+  <a href="mainpage.jpg" target="_blank" id="background-link">
+    <div id="background-photo"></div>
+  </a>
+
+  <div id="content">
+    <div id="main-content">
+      <h1 id="title">Fiqah Sense</h1>
+
+      <div id="home" class="page active">
+        <h3>PENGENALAN</h3> 
+		<p>Laman web ini ditubuhkan bagi memenuhi keperluan projek</p>  
+		EAT3123 TEKNOLOGI DAN INOVASI DALAM PENDIDIKAN</p>
+
+		<p>Subjek yang dikhususkan adalah berdasarkan KSSM Pendidikan Islam Tingkatan 1</p> 
+		<p>Tajuk: Istinjak.</p>
+      </div>
+
+      <div id="apa" class="page">
+        <p>Ini adalah info tentang Apa itu Istinjak.</p>
+        <!-- Example M, H, D symbols with toggle -->
+        <span class="symbol-btn" onclick="toggleInfo('m-info')">M</span>
+        <span class="symbol-btn" onclick="toggleInfo('h-info')">H</span>
+        <span class="symbol-btn" onclick="toggleInfo('d-info')">D</span>
+
+        <div id="m-info" class="info-box">Info M: Contoh info tentang M.</div>
+        <div id="h-info" class="info-box">Info H: Contoh info tentang H.</div>
+        <div id="d-info" class="info-box">Info D: Contoh info tentang D.</div>
+      </div>
+
+      <div id="alat" class="page">
+        <p>Video related to alat dan kaedah istinjak:</p>
+        <div class="video-wrapper">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/27XYHHB_nHw?si=bi3reVBVET78AliA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
+      </div>
+
+      <div id="cara" class="page">
+        <p>Ini adalah permainan *mise and match* untuk Cara Cara Istinjak.</p>
+        <!-- You can replace with your actual game content -->
+        <p>[Game Mis & Match placeholder]</p>
+      </div>
+
+      <div id="adab" class="page">
+        <p>Adab dan Qada Hajat info dengan gambar:</p>
+        <a href="adab-photo.jpg" target="_blank">
+          <img src="adab-photo.jpg" alt="Adab dan Qada Hajat" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+        </a>
+      </div>
+
+      <div id="kepentingan" class="page">
+        <p>Kepentingan Istinjak slide dari Canva:</p>
+        <!-- Example embedded Canva slide iframe or image -->
+        <iframe src="https://www.canva.com/design/your-canva-design-url/embed" width="100%" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+
+      <div id="quizz" class="page">
+        <p>Quizz - scan QR untuk akses:</p>
+        <a href="quizz-qr.jpg" target="_blank">
+          <img src="quizz-qr.jpg" alt="Quizz QR code" style="width:150px; height:auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+        </a>
+      </div>
+
+      <div id="feedback" class="page">
+        <p>Feedback form:</p>
+        <form onsubmit="alert('Terima kasih atas maklum balas anda!'); return false;">
+          <textarea placeholder="Tulis maklum balas anda di sini..." rows="5" required></textarea><br/>
+          <button type="submit">Hantar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function openSidebar() {
+    document.getElementById("sidebar").style.left = "0";
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").style.left = "-250px";
+  }
+
+  function showPage(pageId) {
+    closeSidebar();
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(p => p.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+  }
+
+  function toggleInfo(id) {
+    let el = document.getElementById(id);
+    if(el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
